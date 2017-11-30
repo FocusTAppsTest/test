@@ -1,0 +1,41 @@
+CREATE TABLE [dbo].[dimDate]
+(
+[DateID] [int] NOT NULL,
+[DateKey] [date] NOT NULL,
+[DateName] [varchar] (16) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[DateNameShort] [varchar] (8) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[CalendarYearKey] [int] NOT NULL,
+[CalendarYear] [varchar] (4) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[CalendarQuarterKey] [int] NOT NULL,
+[CalendarQuarter] [varchar] (8) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[CalendarQuarterOfYear] [int] NOT NULL,
+[MonthKey] [int] NOT NULL,
+[Month] [varchar] (9) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[MMM] [varchar] (3) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[MonthOfYear] [varchar] (2) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[WeekKey] [int] NOT NULL,
+[Week] [varchar] (7) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[WeekOfYear] [varchar] (2) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[DayOfWeekKey] [int] NOT NULL,
+[DayOfWeek] [varchar] (9) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[DayOfWeekShort] [varchar] (3) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[DayOfMonth] [varchar] (2) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[DayOfYear] [varchar] (3) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[IsMonthEnd] [int] NOT NULL,
+[WeekStart] [date] NOT NULL,
+[WeekEnd] [date] NOT NULL,
+[WeekEndShort] [varchar] (5) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[RelativePeriod] [varchar] (7) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[RelativePeriodDays] [int] NOT NULL,
+[RelativeWeek] [varchar] (7) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[AgeRange] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[Rolling8Days] [int] NOT NULL,
+[Rolling21Days] [int] NOT NULL,
+[Rolling30Days] [int] NOT NULL,
+[RollingPrev4Weeks] [int] NOT NULL,
+[Rolling15Weeks] [int] NOT NULL,
+[Rolling13Months] [int] NOT NULL
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[dimDate] ADD CONSTRAINT [PK_dimDate] PRIMARY KEY CLUSTERED  ([DateID]) WITH (FILLFACTOR=90) ON [PRIMARY]
+GO
